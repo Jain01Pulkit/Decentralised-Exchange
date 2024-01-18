@@ -1,0 +1,25 @@
+.landing_page {
+    height: 100vh;
+    .welcome_area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        svg{
+            animation: zoom-in-zoom-out 1.5s ease;
+            animation-delay: 0.5s;
+        }
+    }
+}
+
+@keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.5, 1.5);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }

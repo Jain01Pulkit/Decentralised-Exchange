@@ -1,0 +1,10 @@
+@import "../../assets/theme/_var.scss";
+@import "../../assets/theme/_mixins.scss";
+
+.baselayout {
+  flex: 1 0 auto;
+  // overflow-x: hidden;
+  @include theme() {
+    background-color: theme-get("baseBg");
+  }
+}

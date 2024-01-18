@@ -1,0 +1,107 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.social_links {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid;
+  padding: 10px 0;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  z-index: 1;
+
+  @include theme() {
+    // background-color: theme-get("fieldBg");
+    border-color: theme-get("borderColor");
+  }
+
+  .icon {
+    width: 62px;
+    height: 55px;
+    position: relative;
+
+    @media (max-width: 767px) {
+      width: 40px;
+      height: 30px;
+    }
+
+    // svg {
+    //   path {
+    //     transition: all ease 0.5s;
+    //     @include theme() {
+    //       fill: theme-get("iconClr");
+    //     }
+    //   }
+    //   &:hover {
+    //     path {
+    //       fill: $baseColor;
+    //       transition: all ease 0.5s;
+    //     }
+    //   }
+    // }
+    i {
+      background-size: 25px;
+      width: 26px;
+      height: 25px;
+      content: "";
+      left: 0;
+      position: absolute;
+      background-repeat: no-repeat;
+      right: 0;
+      margin: auto;
+      top: 19px;
+      @media (max-width: 767px) {
+        top: 0;
+      }
+
+      &.twitter {
+        background-image: url("../../../assets/images/twitter.svg");
+
+        &:hover {
+          background-image: url("../../../assets/images/g-twitter.svg");
+        }
+      }
+
+      &.discord {
+        background-image: url("../../../assets/images/discord.svg");
+
+        &:hover {
+          background-image: url("../../../assets/images/g-discord.svg");
+        }
+      }
+
+      &.medium {
+        background-image: url("../../../assets/images/medium.svg");
+
+        &:hover {
+          background-image: url("../../../assets/images/g-medium.svg");
+        }
+      }
+
+      &.telegram {
+        background-image: url("../../../assets/images/telegram.svg");
+
+        &:hover {
+          background-image: url("../../../assets/images/g-telegram.svg");
+        }
+      }
+    }
+  }
+  &.forMob {
+    position: static;
+    border: 0;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    top: 0;
+    transform: unset;
+
+    @media (max-width: 767px) {
+      display: flex;
+    }
+  }
+}

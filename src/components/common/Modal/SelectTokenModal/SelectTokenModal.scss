@@ -1,0 +1,210 @@
+@import "../../../../assets/theme/_var.scss";
+@import "../../../../assets/theme/_mixins.scss";
+
+.selectToken_Modal {
+  max-width: 400px;
+
+  @media (max-width: 767px) {
+    max-width: 320px;
+  }
+  .ant-modal-body {
+    padding: 0;
+  }
+  .searchField {
+    border-radius: 10px;
+    border: 2px solid transparent;
+    overflow: hidden;
+    margin: 20px 30px 15px;
+    @include theme() {
+      color: theme-get("linkActvie");
+    }
+    background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(
+          170deg,
+          rgba(5, 232, 252, 1) 0%,
+          rgba(254, 2, 145, 1) 100%
+        )
+        border-box;
+    @media (max-width: 767px) {
+      margin: 20px;
+    }
+    .ant-input {
+      padding: 16px 20px;
+      border: 0;
+      font-weight: 400;
+      font-size: 16px;
+      background-color: transparent;
+      @include theme() {
+        color: theme-get("linkColor");
+      }
+      @media (max-width: 767px) {
+        font-size: 14px;
+        padding: 12px 15px;
+      }
+      &:hover,
+      &:focus {
+        box-shadow: unset;
+      }
+      &::placeholder {
+        @include theme() {
+          color: theme-get("linkColor");
+        }
+      }
+    }
+  }
+  .tokenTab {
+    .ant-tabs-nav {
+      margin-bottom: 0;
+
+      &::before {
+        border-bottom: 2px solid transparent;
+        @include theme() {
+          border-color: theme-get("borderClr3");
+        }
+      }
+    }
+    .ant-tabs-nav-list {
+      width: 100%;
+    }
+    .ant-tabs-tab {
+      margin: 0;
+      padding: 10px 5px;
+      flex: 0 0 25%;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      justify-content: center;
+      border: 0;
+      border-image-slice: 1;
+      border-width: 2px;
+      border-bottom: 2px solid transparent;
+
+      @include theme() {
+        color: theme-get("linkColor");
+      }
+      @media (max-width: 767px) {
+        font-size: 13px;
+        padding: 8px 5px;
+      }
+      &.ant-tabs-tab-active {
+        border-image-source: linear-gradient(
+          135deg,
+          #05e8fc 14.34%,
+          #fe0291 85.36%
+        );
+        .ant-tabs-tab-btn {
+          @include theme() {
+            color: theme-get("linkActvie");
+          }
+        }
+      }
+    }
+  }
+
+  .ant-tabs-content {
+    // padding: 16px 30px;
+  }
+}
+
+.tokenList {
+  .tokenList_head {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 12px 42px;
+    @media (max-width: 767px) {
+      font-size: 13px;
+      padding: 12px 32px;
+    }
+
+    @include theme() {
+      color: theme-get("linkColor");
+    }
+  }
+  .tokenList_Body {
+    max-height: 285px;
+  }
+  .tokenList_Wrap {
+    border-radius: 10px;
+    padding: 8px 30px;
+    @include theme() {
+      color: theme-get("linkActvie");
+    }
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      @include theme() {
+        background-color: theme-get("dotBg");
+      }
+    }
+    .tokenList_Left {
+      display: flex;
+      align-items: center;
+      gap: 0 12px;
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+      .tokenName {
+        line-height: 20px;
+        span {
+          display: flex;
+          align-items: center;
+          gap: 0 5px;
+
+          svg {
+            path {
+              @include theme() {
+                fill: theme-get("textColor");
+              }
+            }
+            @media (max-width: 767px) {
+              width: 10px;
+              height: 10px;
+            }
+          }
+          &:hover {
+            svg {
+              path {
+                @include theme() {
+                  fill: theme-get("linkActvie");
+                }
+              }
+            }
+          }
+        }
+        small {
+          font-weight: 400;
+          font-size: 13px;
+          @include theme() {
+            color: theme-get("linkColor");
+          }
+          @media (max-width: 767px) {
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.darkTheme {
+  .searchField {
+    background: linear-gradient(#000000, #000000) padding-box,
+      linear-gradient(
+          170deg,
+          rgba(5, 232, 252, 1) 0%,
+          rgba(254, 2, 145, 1) 100%
+        )
+        border-box;
+  }
+}

@@ -1,0 +1,141 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.connect_wallet {
+  .ant-modal-content {
+    @include theme() {
+      background-color: theme-get("baseBg");
+    }
+    color: $white;
+    border-radius: 10px;
+    font-family: $baseFont;
+    .ant-modal-body {
+      .design_pop {
+        width: 100%;
+        .options {
+          @include theme() {
+            background-color: theme-get("modelfield");
+          }
+          height: 60px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px;
+          span {
+            color: $black;
+            font-size: 16px;
+            font-weight: 400;
+            @include theme() {
+              color: theme-get("titleColor");
+            }
+            @media (max-width: 767px) {
+              font-size: 14px;
+            }
+          }
+          .ant-select {
+            cursor: pointer;
+            font-family: $baseFont;
+            .ant-select-selector {
+              border-radius: 4px !important;
+              border: 0;
+              background: transparent;
+              padding: 0px 14px 0px 10px;
+              height: auto;
+            }
+            .ant-select-arrow {
+              color: rgb(0 0 0 / 54%);
+            }
+            &:hover {
+              .ant-select-selector {
+                border: 0;
+                box-shadow: unset;
+                outline: unset;
+              }
+            }
+            .ant-select-arrow {
+              margin-top: -3px;
+              svg {
+                font-size: 12px;
+              }
+            }
+          }
+          .ant-select-open {
+            &:focus {
+              box-shadow: unset;
+            }
+          }
+          .ant-select-focused {
+            box-shadow: unset;
+          }
+          .theme_change {
+            button {
+              cursor: pointer;
+              background: transparent;
+              display: flex;
+              align-items: center;
+              span {
+                line-height: 0;
+                display: inline-block;
+
+                &.sunIcon {
+                  svg {
+                    path {
+                      @include theme() {
+                        fill: theme-get("linkActvie");
+                      }
+                    }
+                  }
+                }
+                &.moonIcon {
+                  svg {
+                    path {
+                      @include theme() {
+                        fill: theme-get("textColor");
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .slash {
+              color: $border;
+              position: relative;
+              top: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.ant-select-dropdown {
+  padding: 0;
+  font-family: $baseFont;
+  border: 0 !important;
+  border-radius: 5px !important;
+  box-shadow: unset;
+  margin-top: -6px !important;
+}
+
+// .darkTheme {
+//   .theme_change {
+//     button {
+//       border: 0;
+//       .icon_moon {
+//         path {
+//           @include theme() {
+//             fill: theme-get("linkActvie");
+//           }
+//         }
+//       }
+//       .icon_sun {
+//         path {
+//           @include theme() {
+//             fill: theme-get("titleColor");
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,49 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.commonBtn {
+  position: relative;
+  border-radius: 7px;
+  height: 48px;
+  padding: 0 38px;
+  font-size: 18px;
+  border: none;
+  font-family: $baseFont;
+  white-space: nowrap;
+  align-items: center;
+  transition: all ease 0.5s;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  min-width: 130px;
+  @include theme() {
+    background-color: theme-get("dotBg");
+    color: theme-get("linkActvie");
+  }
+  @media (max-width: 767px) {
+    padding: 0 20px;
+    font-size: 16px;
+    min-width: 100px;
+  }
+  &:focus,
+  &:focus-visible {
+    box-shadow: unset;
+  }
+  &:hover {
+    background: $Gradient-3;
+    color: $white;
+  }
+  .icon {
+    display: none;
+  }
+  &.disabled {
+    @include theme() {
+      background-color: theme-get("dotBg");
+      color: theme-get("linkColor");
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.cake-Selector {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  label {
+    margin-bottom: 10px;
+    @include theme() {
+      color: theme-get("linkActvie");
+    }
+  }
+  .ant-input-group {
+    .ant-input {
+      height: 54px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      border-right: 0;
+      background-color: transparent;
+      @include theme() {
+        border-color: theme-get("dotBg");
+        color: theme-get("linkActvie");
+      }
+      &::placeholder {
+        @include theme() {
+          color: theme-get("linkActvie");
+        }
+      }
+      &:focus {
+        box-shadow: unset;
+        outline: none;
+      }
+    }
+  }
+  span.ant-input-group-addon {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 0;
+    background-color: transparent;
+    @include theme() {
+      border-color: theme-get("dotBg");
+      color: theme-get("linkActvie");
+    }
+    .ant-select-selection-item {
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: capitalize;
+
+      @media (max-width: 767px) {
+        font-size: 15px;
+      }
+    }
+    .ant-select {
+      @include theme() {
+        color: theme-get("linkActvie");
+      }
+    }
+    .ant-select-focused .ant-select-selector {
+      @include theme() {
+        color: theme-get("linkActvie");
+      }
+    }
+  }
+  .selector_space {
+    margin-bottom: 25px;
+  }
+  //   border: 1.5px solid #be0505;
+}

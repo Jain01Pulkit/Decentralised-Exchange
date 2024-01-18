@@ -1,0 +1,76 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.border_btn {
+  position: relative;
+  height: 48px;
+  padding: 10px 16px;
+  font-size: 18px;
+  @include theme() {
+    color: theme-get("linkActvie");
+  }
+  border: 2px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(170deg, rgba(5, 232, 252, 1) 0%, rgba(254, 2, 145, 1) 100%)
+      border-box;
+  border-radius: 7px;
+  font-family: $baseFont;
+  white-space: nowrap;
+  line-height: 26px;
+  font-weight: 600;
+  cursor: pointer;
+  &:focus,
+  &:focus-visible {
+    box-shadow: unset;
+    border: 2px solid transparent;
+    background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(
+          170deg,
+          rgba(5, 232, 252, 1) 0%,
+          rgba(254, 2, 145, 1) 100%
+        )
+        border-box;
+    color: $black;
+  }
+  &:hover {
+    background: linear-gradient(
+          170deg,
+          rgba(5, 232, 252, 1) 0%,
+          rgba(254, 2, 145, 1) 100%
+        )
+        padding-box,
+      linear-gradient(
+          170deg,
+          rgba(5, 232, 252, 1) 0%,
+          rgba(254, 2, 145, 1) 100%
+        )
+        border-box;
+    color: $white;
+    border: 2px solid transparent;
+  }
+  .icon {
+    display: none;
+  }
+  &.radius_4x {
+    border-radius: 4px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+    height: 36px;
+    line-height: 13px;
+    padding: 8px 10px;
+  }
+}
+
+.darkTheme {
+  .border_btn {
+    background: linear-gradient(#040404, #040404) padding-box,
+      linear-gradient(
+          170deg,
+          rgba(5, 232, 252, 1) 0%,
+          rgba(254, 2, 145, 1) 100%
+        )
+        border-box;
+  }
+}

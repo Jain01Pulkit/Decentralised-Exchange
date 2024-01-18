@@ -1,0 +1,54 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+.list_History {
+  .ant-modal-content {
+    max-width: 630px;
+    border-radius: 20px;
+    @media (max-width: 767px) {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    @include theme() {
+      background-color: theme-get("baseBg");
+    }
+    .ant-modal-header {
+      padding: 27px 30px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+
+      @include theme() {
+        background-color: theme-get("headerBg");
+        color: theme-get("titleColor");
+        border-color: theme-get("dotBg");
+      }
+      @media (max-width: 767px) {
+        padding: 20px;
+      }
+      .ant-modal-title {
+        font-size: 25px;
+        font-weight: 600;
+        @include theme() {
+          color: theme-get("titleColor");
+        }
+        @media (max-width: 767px) {
+          font-size: 20px;
+        }
+      }
+    }
+    .ant-modal-body {
+      padding: 30px 30px 50px 30px;
+      @media (max-width: 767px) {
+        padding: 20px 20px 30px;
+      }
+    }
+    .pages-roll {
+      margin-top: 40px;
+      @media (max-width: 767px) {
+        margin-top: 0;
+      }
+    }
+    .anticon {
+      margin-right: 10px;
+    }
+  }
+}

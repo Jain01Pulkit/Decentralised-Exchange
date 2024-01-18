@@ -1,0 +1,20 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.cake_block {
+  h4 {
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 0;
+    @include theme() {
+      color: theme-get("titleColor");
+    }
+  }
+  p {
+    font-size: 16px;
+    margin: 0;
+    @include theme() {
+      color: theme-get("linkColor");
+    }
+  }
+}

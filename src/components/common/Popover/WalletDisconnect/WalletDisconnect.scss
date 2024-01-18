@@ -1,0 +1,120 @@
+@import "../../../../assets/theme/_var.scss";
+@import "../../../../assets/theme/_mixins.scss";
+
+.ant-popover {
+  .ant-popover-arrow {
+    display: none;
+  }
+  .ant-popover-inner {
+    border-radius: 10px;
+    @include theme() {
+      background-color: theme-get("baseBg");
+    }
+    .ant-popover-inner-content {
+      padding: 30px 20px 20px;
+      @media (max-width: 767px) {
+        padding: 20px;
+      }
+    }
+  }
+}
+
+.disconnectWallet {
+  .walletWrap {
+    margin-bottom: 30px;
+    gap: 0 20px;
+    @media (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+    .walletDetail {
+      display: flex;
+      align-items: center;
+      min-width: 195px;
+      img {
+        width: 48px;
+        height: 48px;
+        @media (max-width: 767px) {
+          width: 36px;
+          height: 36px;
+        }
+      }
+      .walletName {
+        margin-left: 12px;
+        span {
+          display: block;
+          &.boldTxt {
+            font-weight: 600;
+            font-size: 18px;
+            @include theme() {
+              color: theme-get("linkActvie");
+            }
+            @media (max-width: 767px) {
+              font-size: 16px;
+            }
+          }
+          &.lightTxt {
+            font-weight: 400;
+            font-size: 16px;
+            @include theme() {
+              color: theme-get("linkColor");
+            }
+            @media (max-width: 767px) {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    .commonBtn {
+      padding: 8px 12px;
+      height: 42px;
+      font-size: 16px;
+      min-width: auto;
+      @media (max-width: 767px) {
+        font-size: 13px;
+      }
+    }
+  }
+  .walletExtra_Wrap {
+    font-weight: 400;
+    font-size: 14px;
+    @media (max-width: 767px) {
+      font-size: 13px;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0 5px;
+      @include theme() {
+        color: theme-get("linkColor");
+      }
+
+      &:hover {
+        @include theme() {
+          color: theme-get("linkActvie");
+        }
+      }
+
+      svg {
+        @media (max-width: 767px) {
+          width: 13px;
+          height: 13px;
+        }
+      }
+    }
+  }
+}
+
+.walletAddress {
+  display: flex;
+  align-items: center;
+  img {
+    margin-left: 16px;
+    width: 28px;
+    height: 28px;
+    @media (max-width: 767px) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

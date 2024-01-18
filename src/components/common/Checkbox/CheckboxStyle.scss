@@ -1,0 +1,25 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.checkboxStyle {
+  margin-right: 12px;
+  .ant-checkbox {
+    .ant-checkbox-inner {
+      @include theme() {
+        border-color: theme-get("textColor");
+        background-color: theme-get("baseBg");
+      }
+    }
+    &.ant-checkbox-checked {
+      .ant-checkbox-inner {
+        @include theme() {
+          border-color: theme-get("linkActvie");
+        }
+        &::after {
+          border-image-source: linear-gradient(90deg, #ed2391 0%, #19cfdd 100%);
+          border-image-slice: 1;
+        }
+      }
+    }
+  }
+}

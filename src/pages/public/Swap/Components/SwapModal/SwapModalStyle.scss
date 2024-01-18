@@ -1,0 +1,263 @@
+@import "../../../../../assets/theme/_var.scss";
+@import "../../../../../assets/theme/_mixins.scss";
+
+.connect_wallet {
+  &.swapSetting_Modal {
+    max-width: 400px;
+    @media (max-width: 767px) {
+      max-width: calc(100vw - 20px);
+    }
+
+    .ant-modal-body {
+      padding: 30px;
+      @media (max-width: 767px) {
+        padding: 20px;
+      }
+    }
+  }
+
+  &.confirmSwap_Modal {
+    max-width: 450px;
+    @media (max-width: 767px) {
+      max-width: 320px;
+    }
+    .ant-modal-body {
+      padding: 30px;
+      @media (max-width: 767px) {
+        padding: 15px;
+      }
+    }
+    .swapSetting_Top {
+      margin-bottom: 30px;
+    }
+    .swapPrice_wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 20px;
+      @include theme() {
+        color: theme-get("linkActvie");
+      }
+      @media (max-width: 767px) {
+        font-size: 16px;
+        line-height: 26px;
+      }
+      .swapPrice {
+        img {
+          margin-right: 15px;
+        }
+      }
+    }
+    .arrowIcon {
+      margin: 10px 0;
+
+      svg {
+        path {
+          @include theme() {
+            fill: theme-get("blueClr");
+          }
+        }
+      }
+    }
+    .swapNote {
+      margin-bottom: 30px;
+      border-radius: 10px;
+      padding: 15px;
+      font-weight: 400;
+      font-size: 14px;
+      @include theme() {
+        color: theme-get("linkColor");
+        background: theme-get("swapBg");
+      }
+      @media (max-width: 767px) {
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+      span {
+        @include theme() {
+          color: theme-get("linkActive2");
+        }
+      }
+    }
+    .cnfmSwap_Btn {
+      width: 100%;
+      @include theme() {
+        color: theme-get("textColor");
+      }
+
+      &:hover {
+        color: $white;
+      }
+    }
+    .priceUpdated {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      border: 1px solid;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      @include theme() {
+        border-color: theme-get("borderClr3");
+        color: theme-get("linkActive");
+      }
+      @media (max-width: 767px) {
+        padding: 12px 15px;
+        font-size: 14px;
+      }
+      .priceUpdated_txt {
+        display: flex;
+        gap: 0 10px;
+      }
+      .commonBtn {
+        font-size: 16px;
+        padding: 8px 20px;
+        min-width: fit-content;
+        height: auto;
+        @media (max-width: 767px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &.swapComplete_Modal {
+    max-width: 540px;
+    .ant-modal-body {
+      padding: 40px 60px;
+    }
+    .swapComplete_Content {
+      h2 {
+        font-weight: 600;
+        font-size: 25px;
+        margin-bottom: 8px;
+        @include theme() {
+          color: theme-get("linkActive");
+        }
+      }
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 0;
+        @include theme() {
+          color: theme-get("linkColor");
+        }
+      }
+    }
+  }
+}
+
+.swapSetting_Style {
+  font-size: 14px;
+  font-weight: 400;
+  @include theme() {
+    color: theme-get("linkActvie");
+  }
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
+
+  .label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    span {
+      font-weight: 600;
+      @include theme() {
+        color: theme-get("blueClr");
+      }
+    }
+  }
+
+  .gasBtn_Wrap {
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    gap: 0 5px;
+    margin-bottom: 30px;
+    @include theme() {
+      background-color: theme-get("swapBg");
+    }
+
+    .chartBtns {
+      @include theme() {
+        color: theme-get("linkColor");
+        background-color: theme-get("swapBg");
+      }
+      cursor: pointer;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 15px;
+      font-weight: 600;
+      min-width: 72px;
+      min-height: 48px;
+      height: 100%;
+      @media (max-width: 767px) {
+        font-size: 11px;
+        min-width: 62px;
+        padding: 5px;
+      }
+
+      &:hover,
+      &.active {
+        font-weight: 600;
+        @include theme() {
+          color: theme-get("linkActvie");
+        }
+      }
+    }
+  }
+
+  .slipageField {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    @include theme() {
+      background-color: theme-get("swapBg");
+    }
+
+    .ant-input-group {
+      height: 100%;
+      .ant-input,
+      .ant-input-group-addon {
+        height: 100%;
+        background-color: transparent;
+        border: 0;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 8px 16px;
+        @include theme() {
+          color: theme-get("linkColor");
+        }
+        @media (max-width: 767px) {
+          font-size: 14px;
+        }
+
+        &::placeholder {
+          @include theme() {
+            color: theme-get("linkColor");
+          }
+        }
+
+        &:hover,
+        &:focus {
+          box-shadow: unset;
+        }
+      }
+    }
+    .gradientBtn {
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 400;
+      white-space: nowrap;
+      padding: 5px 12px;
+      @media (max-width: 767px) {
+        font-size: 12px;
+      }
+    }
+  }
+}

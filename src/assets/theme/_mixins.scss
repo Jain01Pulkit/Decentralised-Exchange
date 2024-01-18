@@ -1,0 +1,263 @@
+/* border-radius */
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+/* appearance */
+
+@mixin x-appearance($value) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  appearance: $value;
+}
+
+/* Placeholder */
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+/* Box Sizing */
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+  -moz-box-sizing: $box-model; // Firefox <= 19
+  box-sizing: $box-model;
+}
+
+/* box-shadow */
+
+@mixin box-shadow($box-shadow) {
+  -webkit-box-shadow: $box-shadow;
+  -moz-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+}
+
+/* text-shadow */
+
+/* @mixin text-shadow($text-shadow) {
+  -webkit-text-shadow: $text-shadow;
+     -moz-text-shadow: $text-shadow;
+          text-shadow: $box-shadow;
+} */
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, 1)) {
+  text-shadow: $x $y $blur $color;
+}
+
+/* breakpoints */
+
+@mixin breakpoint($point) {
+  @if $point == xxxxlarge {
+    @media (max-width: 1620px) {
+      @content;
+    } /* 1620 px*/
+  }
+  @if $point == xxxlargem {
+    @media (max-width: 1520px) {
+      @content;
+    } /* 1400 px*/
+  } /* 1520 px*/
+  @if $point == xxxlarge {
+    @media (max-width: 1466px) {
+      @content;
+    } /* 1466 px*/
+  }
+  @if $point == xxlarge {
+    @media (max-width: 1280px) {
+      @content;
+    } /* 1280 px*/
+  }
+  @if $point == xlarge {
+    @media (max-width: 1199px) {
+      @content;
+    } /* 1199 px*/
+  }
+  @if $point == large {
+    @media (max-width: 1024px) {
+      @content;
+    } /* 1024 px*/
+  } @else if $point == medium {
+    @media (max-width: 991px) {
+      @content;
+    } /* 991 px*/
+  } @else if $point == small {
+    @media (max-width: 767px) {
+      @content;
+    } /* 767 px*/
+  } @else if $point == m-small {
+    @media (max-width: 575px) {
+      @content;
+    } /* 767 px*/
+  } @else if $point == x-small {
+    @media (max-width: 480px) {
+      @content;
+    } /* 480 px*/
+  } @else if $point == xx-small {
+    @media (max-width: 424px) {
+      @content;
+    } /* 480 px*/
+  }
+}
+
+/* Retina */
+
+@mixin image-2x($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+    (-o-min-device-pixel-ratio: 2.6/2),
+    (-webkit-min-device-pixel-ratio: 1.3),
+    (min-device-pixel-ratio: 1.3),
+    (min-resolution: 1.3dppx) {
+    background-image: url($image); /* on retina, use image that's scaled by 2 */
+    background-size: $width $height; /*@include image-2x("url", 100px, 25px);*/
+  }
+}
+
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+/* transition */
+
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+@mixin transition-property($property...) {
+  -moz-transition-property: $property;
+  -o-transition-property: $property;
+  -webkit-transition-property: $property;
+  transition-property: $property;
+}
+@mixin transition-duration($duration...) {
+  -moz-transition-property: $duration;
+  -o-transition-property: $duration;
+  -webkit-transition-property: $duration;
+  transition-property: $duration;
+}
+@mixin transition-timing-function($timing...) {
+  -moz-transition-timing-function: $timing;
+  -o-transition-timing-function: $timing;
+  -webkit-transition-timing-function: $timing;
+  transition-timing-function: $timing;
+}
+@mixin transition-delay($delay...) {
+  -moz-transition-delay: $delay;
+  -o-transition-delay: $delay;
+  -webkit-transition-delay: $delay;
+  transition-delay: $delay;
+}
+
+/* ===== transformation ===== */
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms !important;
+}
+@mixin translateX($x) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms !important;
+}
+
+@mixin translateY($y) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms !important;
+}
+
+/* rotate */
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+/* scale */
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+/* translate */
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+/* skew */
+@mixin skew($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+/* transform origin */
+@mixin transform-origin($origin) {
+  moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+/* fluid-typografy*/
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+/* ===== transformation Ends ===== */
+@mixin theme() {
+  @each $theme, $map in $themes {
+    $theme-map: $map !global;
+    .#{$theme} & {
+      @content;
+    }
+  }
+  $theme-map: null !global;
+}
+
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
+}

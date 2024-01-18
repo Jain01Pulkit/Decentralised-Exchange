@@ -1,0 +1,135 @@
+@import "../../../../../assets/theme/_var.scss";
+@import "../../../../../assets/theme/_mixins.scss";
+.swapCard {
+  border: 1px solid;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  @include theme() {
+    color: theme-get("linkActvie");
+    border-color: theme-get("borderClr2");
+    background: theme-get("gradientBg");
+  }
+  .swapCard_Top {
+    padding: 20px 30px;
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include theme() {
+      border-color: theme-get("dotBg");
+    }
+    @media (max-width: 767px) {
+      padding: 20px;
+    }
+    .swapTop_Left {
+      h5 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        margin-bottom: 5px;
+        color: inherit;
+        @media (max-width: 767px) {
+          font-size: 18px;
+          line-height: 20px;
+        }
+      }
+      p {
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 400;
+        margin-bottom: 0;
+        @media (max-width: 767px) {
+          font-size: 11px;
+        }
+      }
+    }
+    .swapTop_Right {
+      span {
+        cursor: pointer;
+
+        &:first-child {
+          margin-right: 15px;
+        }
+
+        &:hover {
+          path {
+            @include theme() {
+              fill: theme-get("linkActvie");
+            }
+          }
+        }
+        &.refreshIcon {
+          &:hover {
+            svg {
+              transition: all 0.3s linear;
+              transform: rotate(360deg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .swapCard_Mid {
+    padding: 30px;
+    @media (max-width: 991px) {
+      padding: 20px 20px 55px;
+    }
+    .swapIcon_Div {
+      margin: 15px 0;
+      display: flex;
+      justify-content: center;
+
+      .swapIcon {
+        cursor: pointer;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: all 0.3s linear;
+        @include theme() {
+          background: theme-get("swapBg");
+        }
+
+        svg {
+          path {
+            @include theme() {
+              fill: theme-get("blueClr");
+            }
+          }
+        }
+
+        &:hover {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+
+    .commonBtn {
+      margin-top: 40px;
+      width: 100%;
+      @media (max-width: 767px) {
+        margin-top: 30px;
+      }
+    }
+  }
+  .priceChartBtn {
+    background-image: url("../../../../../assets/images/priceChartUp.svg");
+    bottom: 0;
+  }
+}
+
+.darkTheme {
+  .swap_page {
+    .swapRight {
+      .swapCard {
+        .priceChartBtn {
+          background-image: url("../../../../../assets/images/priceChartUp_dark.svg");
+        }
+      }
+    }
+  }
+}

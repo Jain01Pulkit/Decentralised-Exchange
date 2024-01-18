@@ -1,0 +1,378 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.header {
+  @include theme() {
+    background-color: theme-get("headerBg");
+  }
+  padding: 20px 0;
+  .HeaderStyle {
+    width: 100%;
+    .leftHead {
+      display: flex;
+      align-items: center;
+      .headLogo {
+        margin-right: 60px;
+        @media (max-width: 767px) {
+          width: 125px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .navlinkWrap {
+        width: 585px;
+        .ant-menu {
+          line-height: inherit;
+          border-bottom: 0;
+          background: transparent;
+          display: flex;
+          border-right: 0;
+          @media (max-width: 991px) {
+            width: 100%;
+            flex-direction: column;
+            text-align: center;
+          }
+          .ant-menu-item {
+            padding: 0;
+            &.last_nav {
+              .link_style {
+                margin-right: 0;
+              }
+            }
+            &.ant-menu-item-active:after {
+              display: none;
+            }
+          }
+        }
+        .link_style {
+          @include theme() {
+            color: theme-get("linkColor");
+          }
+          font-size: 16px;
+          font-weight: 600;
+          text-transform: capitalize;
+          font-family: $baseFont;
+          text-decoration: none;
+          margin-right: 35px;
+          padding: 5px;
+          position: relative;
+          @media (max-width: 991px) {
+            @include theme() {
+              color: theme-get("iconClr");
+            }
+            text-transform: uppercase;
+          }
+          &::after {
+            content: "";
+            width: 0;
+            height: 2px;
+            position: absolute;
+            transition: all 0.2s linear;
+            left: 50%;
+            bottom: 0;
+            transition-duration: 0.4s;
+            @include theme() {
+              background: theme-get("linkActvie");
+            }
+            @media (max-width: 991px) {
+              display: none;
+            }
+          }
+          &:hover,
+          &:active {
+            @include theme() {
+              color: theme-get("linkActvie");
+              // border-color: theme-get("linkActvie");
+            }
+            &::after {
+              width: 100%;
+              left: 0;
+            }
+            @media (max-width: 991px) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .right_head {
+      .setting_pop {
+        margin-right: 32px;
+        margin-top: 6px;
+        .fillColor {
+          @include theme() {
+            fill: theme-get("linkActvie");
+          }
+        }
+        @media (max-width: 991px) {
+          margin-top: 0;
+          margin-right: 25px;
+        }
+      }
+      .connect_wallet_style {
+        @media (max-width: 991px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.mobile_drawer {
+  display: none;
+  // position: absolute;
+  // right: 280px;
+  @media (max-width: 991px) {
+    display: block;
+  }
+}
+
+.menu_toggle {
+  width: 22px;
+  background-color: transparent;
+  transition-duration: 0.5s;
+  padding: 0;
+  // .icon_left {
+  //   transition-duration: 0.5s;
+  //   position: absolute;
+  //   height: 4px;
+  //   width: 20px;
+  //   top: 12px;
+  //   @include theme() {
+  //     background-color: theme-get("textColor");
+  //   }
+  //   left: 5px;
+  //   &:hover {
+  //     cursor: pointer;
+  //   }
+  //   &:before {
+  //     transition-duration: 0.5s;
+  //     position: absolute;
+  //     width: 20px;
+  //     height: 4px;
+  //     @include theme() {
+  //       background-color: theme-get("textColor");
+  //     }
+  //     content: "";
+  //     top: -12px;
+  //     left: 0;
+  //   }
+  //   &:after {
+  //     transition-duration: 0.5s;
+  //     position: absolute;
+  //     width: 20px;
+  //     height: 4px;
+  //     @include theme() {
+  //       background-color: theme-get("textColor");
+  //     }
+  //     content: "";
+  //     top: 12px;
+  //     left: 0;
+  //   }
+  // }
+  // .icon_right {
+  //   transition-duration: 0.5s;
+  //   position: absolute;
+  //   height: 4px;
+  //   width: 20px;
+  //   top: 12px;
+  //   @include theme() {
+  //     background-color: theme-get("textColor");
+  //   }
+  //   left: 20px;
+  //   &:before {
+  //     transition-duration: 0.5s;
+  //     position: absolute;
+  //     width: 20px;
+  //     height: 4px;
+  //     @include theme() {
+  //       background-color: theme-get("textColor");
+  //     }
+  //     content: "";
+  //     top: -12px;
+  //     left: 0;
+  //   }
+  //   &:after {
+  //     transition-duration: 0.5s;
+  //     position: absolute;
+  //     width: 20px;
+  //     height: 4px;
+  //     @include theme() {
+  //       background-color: theme-get("textColor");
+  //     }
+  //     content: "";
+  //     top: 12px;
+  //     left: 0;
+  //   }
+  // }
+  &.open {
+    .icon_left {
+      transition-duration: 0.5s;
+      background: transparent;
+      &::before {
+        transform: rotateZ(45deg) scaleX(1.4) translate(6px, 2px);
+      }
+      &::after {
+        transform: rotateZ(-45deg) scaleX(1.4) translate(6px, -2px);
+      }
+    }
+    .icon_right {
+      transition-duration: 0.5s;
+      background: transparent;
+      &:before {
+        transform: rotateZ(-45deg) scaleX(1.4) translate(-5px, 4px);
+      }
+      &:after {
+        transform: rotateZ(45deg) scaleX(1.4) translate(-5px, -4px);
+      }
+    }
+  }
+}
+.menu_icon {
+  top: calc(50% - 2px);
+  left: calc(50% - 5px);
+}
+.menu_icon::before,
+.menu_icon::after {
+  content: "";
+  right: 0;
+  width: 15px;
+}
+.menu_icon::before {
+  bottom: 11px;
+}
+.menu_icon::after {
+  top: 11px;
+}
+
+.mobileNav {
+  .menu_toggle {
+    .menu_icon {
+      height: 3px;
+      width: 15px;
+      left: 5px;
+      top: calc(50% - 2px);
+      transform: rotate(-45deg);
+      background-color: $baseColor;
+      &::after {
+        width: 15px;
+        height: 3px;
+        top: -1px;
+        transform: rotate(-270deg);
+        background-color: $baseColor;
+      }
+      &::before {
+        transform: scale(0);
+      }
+    }
+  }
+}
+.menu_icon,
+.menu_icon::after {
+  transition: all 0.3s linear;
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 15px 0;
+    .leftHead {
+      .navlinkWrap {
+        position: fixed;
+        // top: 82px;
+        top: 62px;
+        // background: rgba(255, 255, 255, 0.4);
+        background: rgba(239, 239, 239, 0.4);
+        width: 100%;
+        padding: 10px 25px;
+        z-index: 9;
+        // height: auto;
+        height: 100%;
+        max-width: 100%;
+        overflow-y: auto;
+        bottom: auto;
+        left: -100%;
+        transition: all ease-in-out 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  .mobileNav .leftHead .navlinkWrap {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    text-align: center;
+    width: 100% !important;
+    .ant-menu {
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      .link_style {
+        margin: 0;
+        display: block;
+      }
+    }
+  }
+}
+
+// bottom connect wallet
+
+.connectWallet_Btm {
+  @include theme() {
+    background: theme-get("darkBgLite");
+  }
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 111;
+  display: none;
+
+  @media (max-width: 991px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .auditiedBy {
+    max-width: 115px;
+    p {
+      font-size: 11px;
+      font-weight: 400;
+      margin-bottom: 0px;
+      text-align: right;
+      @include theme() {
+        color: theme-get("linkActvie");
+      }
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.lightTheme {
+  .lightShow {
+    display: block;
+  }
+  .darkShow {
+    display: none;
+  }
+}
+.darkTheme {
+  .lightShow {
+    display: none;
+  }
+  .darkShow {
+    display: block;
+  }
+}

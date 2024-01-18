@@ -1,0 +1,223 @@
+@import "./assets/theme/_var.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import "./assets/theme/_mixins.scss";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // overflow-y: visible !important;
+  &::after {
+    // background-image: url("./assets/images/light_ping_stroke.svg");
+    content: "";
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: inherit;
+    z-index: -1;
+    top: 0;
+
+    @media (max-width: 620px) {
+      display: none;
+    }
+  }
+
+  &::before {
+    // background-image: url("./assets/images/blue_stroke.svg");
+    content: "";
+    width: 700px;
+    top: 0;
+    height: 700px;
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    @media (max-width: 620px) {
+      display: none;
+    }
+  }
+
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+
+ul,
+li {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dflx {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  // @media(max-width:991px) {
+  //   display: block;
+  // }
+}
+
+.ant-tooltip-content {
+  .ant-tooltip-inner {
+    border-radius: 10px;
+    background-color: $tooltipbg;
+    color: $white;
+    -webkit-filter: drop-shadow(0 0 30px hsla(0, 0%, 49.4%, 0.15));
+    filter: drop-shadow(0 0 30px rgba(126, 126, 126, 0.15));
+  }
+
+  .ant-tooltip-arrow {
+    display: none;
+  }
+}
+
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input)
+  .ant-select-selector {
+  box-shadow: none;
+  border-right-width: 0;
+  outline: 0;
+}
+
+.b_wrap {
+  border-radius: 6px;
+  border: 1px solid;
+  padding: 16px;
+
+  @include theme() {
+    border-color: theme-get("borderClr");
+  }
+}
+
+button {
+  border: 0;
+
+  &:focus,
+  &.focus-visible {
+    border: 0;
+    box-shadow: unset;
+  }
+}
+
+.container {
+  max-width: 1320px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.simple_btn {
+  border-radius: 5px;
+  padding: 10px 18px;
+  transition: all ease 0.4s;
+  font-size: 16px;
+  font-weight: 400;
+  border: 0;
+  @media (max-width: 767px) {
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  @include theme() {
+    background-color: theme-get("dotBg");
+    color: theme-get("linkColor");
+  }
+
+  &:hover {
+    @include theme() {
+      color: theme-get("linkActvie");
+    }
+
+    transition: all ease 0.4s;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.m-30 {
+  margin-top: 30px;
+}
+
+.text-center {
+  text-align: center;
+}
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+.scrollBar_Style {
+  .ps__rail-y {
+    opacity: 1 !important;
+    width: 8px;
+    left: auto !important;
+    right: 0;
+    @include theme() {
+      background-color: theme-get("swapBg");
+    }
+  }
+  .ps__thumb-y {
+    height: 24px !important;
+    background: $Gradient-2;
+  }
+}
+
+.lightColor {
+  @include theme() {
+    fill: theme-get("linkColor");
+  }
+}
+.svgLightColor {
+  @include theme() {
+    fill: theme-get("textColor");
+  }
+}
+
+.packShl_icon {
+  @include theme() {
+    fill: theme-get("darkBg");
+  }
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: transparent;
+}

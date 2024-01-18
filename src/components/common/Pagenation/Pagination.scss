@@ -1,0 +1,35 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+    @include theme() {
+      color: theme-get("linkActvie");
+    }
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid;
+    @include theme() {
+      border-color: theme-get("dotBg");
+    }
+    border-radius: 5px;
+    margin: 0 8px;
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover,
+    &:focus {
+      border-image: linear-gradient(140deg, #05e8fc, #fe0291);
+      border-image-slice: 1;
+    }
+
+    @include theme() {
+      background-color: theme-get("baseBg");
+    }
+  }
+}

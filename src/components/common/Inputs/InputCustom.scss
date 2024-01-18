@@ -1,0 +1,122 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.inputCustom_Style {
+  label {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    @include theme() {
+      color: theme-get("linkActvie");
+    }
+    margin-bottom: 12px;
+    @media (max-width: 767px) {
+      font-size: 11px;
+      margin-bottom: 5px;
+    }
+  }
+  .ant-input {
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 15px 20px;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 18px;
+    @include theme() {
+      border-color: theme-get("dotBg");
+      color: theme-get("linkActvie");
+    }
+    @media (max-width: 767px) {
+      font-size: 16px;
+      padding: 10px 15px;
+    }
+
+    &:focus {
+      box-shadow: unset;
+    }
+
+    &::placeholder {
+      @include theme() {
+        color: theme-get("linkActvie");
+      }
+    }
+  }
+}
+
+// coin input style
+
+.coinInput_style {
+  display: flex;
+  align-items: center;
+  @media (max-width: 991px) {
+    justify-content: space-between;
+  }
+  .coinInput_input {
+    .ant-input {
+      border: 0;
+      padding: 0;
+      padding-right: 10px;
+      font-weight: 600;
+      font-size: 20px;
+      background-color: transparent;
+      @include theme() {
+        color: theme-get("linkActvie");
+      }
+      &::placeholder {
+        @include theme() {
+          color: theme-get("linkActvie");
+        }
+      }
+
+      &:focus,
+      &:hover {
+        box-shadow: unset;
+      }
+    }
+
+    .convText {
+      font-weight: 400;
+      font-size: 13px;
+      margin-bottom: 0;
+      // margin-top: -7px;
+      @include theme() {
+        color: theme-get("linkColor");
+      }
+      @media (max-width: 767px) {
+        font-size: 11px;
+      }
+    }
+  }
+
+  .selectStyle {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 8px;
+    min-height: 44px;
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    @include theme() {
+      background: theme-get("swapBg");
+      color: theme-get("linkActvie");
+    }
+    @media (max-width: 767px) {
+      font-size: 13px;
+    }
+    .selectDownIcon {
+      // margin-left: 8px;
+
+      svg {
+        path {
+          @include theme() {
+            fill: theme-get("linkColor");
+          }
+        }
+      }
+    }
+  }
+}

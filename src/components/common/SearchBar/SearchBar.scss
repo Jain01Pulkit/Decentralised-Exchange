@@ -1,0 +1,75 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.search_item {
+  position: relative;
+  .search_input {
+    border-radius: 4px;
+    border: 1px solid;
+    font-family: $baseFont;
+    height: 48px;
+    min-width: 100%;
+    font-weight: 300;
+    padding: 10px 15px;
+    @include theme() {
+      background-color: theme-get("fieldBg");
+      border-color: theme-get("borderClr");
+      color: theme-get("linkActvie");
+    }
+    &:focus,
+    &:focus-visible {
+      outline: unset;
+      box-shadow: unset;
+    }
+  }
+  button.ant-btn.ant-btn-default.secrh_btn {
+    height: 48px;
+    padding: 10px 10px;
+    border: 0;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: transparent;
+    .anticon {
+      font-size: 18px;
+      @include theme() {
+        color: theme-get("linkActvie");
+      }
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: unset !important;
+      box-shadow: unset !important;
+    }
+    &::after {
+      display: none;
+    }
+  }
+
+  &.lable_top {
+    width: 100%;
+    .select_title {
+      position: absolute;
+      left: 8px;
+      top: -8px;
+      padding: 0 8px;
+      z-index: 1;
+      font-size: 13px;
+      @include theme() {
+        background-color: theme-get("fieldBg");
+        color: theme-get("linkColor");
+      }
+      @media (max-width: 767px) {
+        font-size: 11px;
+      }
+    }
+    .option_selct {
+      width: 100%;
+    }
+  }
+}

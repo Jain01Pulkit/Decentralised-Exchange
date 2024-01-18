@@ -1,0 +1,291 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.swap_page {
+  padding-top: 80px;
+  @media (max-width: 991px) {
+    padding-top: 20px;
+  }
+
+  .swapLeft {
+    position: relative;
+    padding-right: 30px;
+    @media (max-width: 991px) {
+      padding: 0 10px;
+      padding-top: 50px;
+    }
+
+    .swapPair {
+      font-size: 25px;
+      font-weight: 600;
+      @include theme() {
+        color: theme-get("linkActvie");
+      }
+      @media (max-width: 767px) {
+        font-size: 20px;
+      }
+      .swapPair_top {
+        margin-bottom: 7px;
+        display: flex;
+        align-items: center;
+        gap: 0 10px;
+        .pairImg {
+          .firstImg {
+            margin-right: -8px;
+            position: relative;
+          }
+        }
+        .updatePair {
+          @include theme() {
+            background: theme-get("iconBg");
+          }
+          border-radius: 7px;
+          width: 24px;
+          height: 24px;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        }
+      }
+
+      .currentPare {
+        font-size: 32px;
+        line-height: 40px;
+        @media (max-width: 767px) {
+          font-size: 28px;
+          line-height: 34px;
+        }
+      }
+    }
+
+    .priceChnge_Wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      @media (max-width: 767px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    .priceChnge {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 400;
+      @include theme() {
+        color: theme-get("linkActvie");
+      }
+      @media (max-width: 767px) {
+        margin-bottom: 24px;
+      }
+      span {
+        margin-right: 12px;
+        &.positive {
+          color: $positive;
+        }
+        &.neagtive {
+          color: $redColor;
+        }
+      }
+    }
+
+    .monthChng_btn {
+      display: flex;
+      gap: 0 20px;
+      @media (max-width: 600px) {
+        gap: 0 10px;
+        width: 100%;
+        justify-content: space-between;
+      }
+      .chartBtns {
+        @media (max-width: 600px) {
+          padding: 5px;
+          min-width: 50px;
+          font-size: 13px;
+        }
+      }
+    }
+    .swapChart {
+      margin-bottom: 30px;
+      @media (max-width: 767px) {
+        margin-bottom: 20px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .priceChartBtn {
+      background-image: url("../../../assets/images/priceChartDown.svg");
+      top: 0;
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .swapRight {
+    @media (max-width: 991px) {
+      padding: 0 10px;
+    }
+  }
+  .forSwap {
+    &.show,
+    &.hide {
+      display: block;
+    }
+
+    @media (max-width: 991px) {
+      &.show {
+        display: block;
+      }
+      &.hide {
+        display: none;
+      }
+    }
+  }
+}
+.swapInput {
+  .swapInput_label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 8px;
+    @media (max-width: 767px) {
+      font-size: 13px;
+    }
+    .maxAmnt {
+      display: flex;
+      align-items: center;
+
+      @include theme() {
+        color: theme-get("blueClr");
+      }
+
+      .maxIcon {
+        line-height: 0;
+        margin-right: 5px;
+
+        svg {
+          path {
+            @include theme() {
+              fill: theme-get("blueClr");
+            }
+          }
+        }
+      }
+    }
+  }
+  .brdrGradient {
+    padding: 16px 20px;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(
+          170deg,
+          rgba(5, 232, 252, 1) 0%,
+          rgba(254, 2, 145, 1) 100%
+        )
+        border-box;
+
+    @media (max-width: 767px) {
+      padding: 10px;
+    }
+  }
+}
+
+.chartBtns {
+  cursor: pointer;
+  position: relative;
+  padding: 5px 10px;
+  min-width: 48px;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  @include theme() {
+    background-color: theme-get("dotBg");
+    color: theme-get("textColor");
+  }
+
+  &.active,
+  &:hover,
+  &:focus {
+    border: 2px solid transparent;
+    @include theme() {
+      color: theme-get("linkActvie");
+    }
+    background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(
+          170deg,
+          rgba(5, 232, 252, 1) 0%,
+          rgba(254, 2, 145, 1) 100%
+        )
+        border-box;
+  }
+}
+
+.priceChartBtn {
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  background-color: transparent;
+  background-size: 100%;
+  width: 250px;
+  height: 30px;
+  right: 50%;
+  transform: translate(50%, 0);
+  @include theme() {
+    color: theme-get("linkColor");
+  }
+
+  @media (max-width: 991px) {
+    display: flex;
+  }
+  svg {
+    margin-right: 5px;
+  }
+}
+.darkTheme {
+  .chartBtns {
+    &.active,
+    &:hover,
+    &:focus {
+      background: linear-gradient(#040404, #040404) padding-box,
+        linear-gradient(
+            170deg,
+            rgba(5, 232, 252, 1) 0%,
+            rgba(254, 2, 145, 1) 100%
+          )
+          border-box;
+    }
+  }
+
+  .swapInput {
+    .brdrGradient {
+      background: linear-gradient(#040404, #040404) padding-box,
+        linear-gradient(
+            170deg,
+            rgba(5, 232, 252, 1) 0%,
+            rgba(254, 2, 145, 1) 100%
+          )
+          border-box;
+    }
+  }
+  .swap_page {
+    .swapLeft {
+      .priceChartBtn {
+        background-image: url("../../../assets/images/priceChartDown_dark.svg");
+      }
+    }
+  }
+}

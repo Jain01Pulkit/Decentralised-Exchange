@@ -1,0 +1,36 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+ul {
+  li {
+    .Bid-sec {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+
+      @include theme() {
+        background-color: theme-get("swapBg");
+        border-radius: 10px;
+      }
+      p {
+        margin-bottom: 0;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        @include theme() {
+          color: theme-get("titleColor");
+        }
+        @media (max-width: 767px) {
+          font-size: 11px;
+          line-height: 15px;
+        }
+        .vector_img {
+          margin-left: 10px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,137 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.valut_chart {
+  margin: 60px 0 30px;
+  .vaultchart_info {
+    margin: auto auto 50px;
+    text-align: center;
+    .valut_name {
+      @include theme() {
+        color: theme-get("linkColor");
+      }
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      @media (max-width: 767px) {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+    }
+    h2.valut_value {
+      background: $Gradient-1;
+      text-transform: uppercase;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 64px;
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 0;
+      line-height: 75px;
+      @media (max-width: 767px) {
+        font-size: 40px;
+        line-height: 50px;
+      }
+    }
+    .fluctuation {
+      font-size: 18px;
+      font-weight: 400;
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+      .fl_prcentage {
+        margin-left: 15px;
+      }
+      &.decrease {
+        color: $redColor;
+      }
+      &.increase {
+        color: $greenColor;
+      }
+    }
+    .time {
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 5px;
+      @media (max-width: 767px) {
+        font-size: 13px;
+      }
+      @include theme() {
+        color: theme-get("linkColor");
+      }
+    }
+  }
+  .ant-carousel {
+    position: relative;
+    .slick-dots {
+      top: 200px;
+      @media (max-width: 767px) {
+        top: 160px;
+      }
+      li {
+        border-radius: 10px;
+        width: 10px;
+        height: 10px;
+        margin: 0 2px;
+        @include theme() {
+          background: theme-get("dotBg");
+        }
+        margin: 0 15px;
+        &.slick-active {
+          background: $border;
+        }
+        button {
+          @include theme() {
+            background: theme-get("dotBg");
+          }
+          width: 10px;
+          border-radius: 10px;
+          height: 10px;
+        }
+        &.slick-active {
+          width: 10px;
+          height: 10px;
+          button {
+            @include theme() {
+              background: theme-get("activeBg");
+            }
+            width: 10px;
+            border-radius: 10px;
+            height: 10px;
+          }
+        }
+      }
+    }
+  }
+  .chart_area {
+    img {
+      width: 100%;
+    }
+    .change_chart_buttons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .chrt_btn {
+        border: 0;
+        font-size: 18px;
+        font-weight: 600;
+        background: transparent;
+        width: 30px;
+        margin-left: 20px;
+        @include theme() {
+          color: theme-get("textColor");
+        }
+        @media (max-width: 767px) {
+          font-size: 13px;
+          width: 25px;
+          margin-left: 5px;
+        }
+        &.active {
+          @include theme() {
+            color: theme-get("linkActvie");
+          }
+        }
+      }
+    }
+  }
+}

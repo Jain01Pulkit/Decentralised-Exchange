@@ -1,0 +1,11 @@
+iframe {
+  display: none !important;
+}
+
+.walletconnect-modal_base {
+  max-width: 397px !important;
+}
+
+.App {
+  min-height: 100vh;
+}

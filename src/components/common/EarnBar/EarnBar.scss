@@ -1,0 +1,75 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.earn_datawrap {
+  margin-bottom: 40px;
+  padding: 20px;
+
+  .scrollBar {
+    @media (max-width: 767px) {
+      overflow-x: scroll;
+    }
+  }
+  .platformWrap {
+    display: none;
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
+  .earnData_First {
+    @media (max-width: 767px) {
+      flex-wrap: nowrap;
+    }
+
+    .platformWrap {
+      display: block;
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+
+  .ant-row {
+    @media (max-width: 1199px) {
+      gap: 10px 0;
+    }
+    @media (max-width: 767px) {
+      gap: 25px 0;
+    }
+  }
+  .balance_box {
+    .wrap_blance {
+      .price {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 25px;
+        @include theme() {
+          color: theme-get("linkActvie");
+        }
+        @media (max-width: 767px) {
+          font-size: 19px;
+        }
+        .anticon-exclamation-circle {
+          @include theme() {
+            color: theme-get("textColor");
+          }
+          font-size: 12px;
+          position: relative;
+          top: -11px;
+          left: 6px;
+        }
+      }
+      .currncy {
+        @include theme() {
+          color: theme-get("linkColor");
+        }
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 20px;
+        @media (max-width: 767px) {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

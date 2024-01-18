@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$baseFont: "Poppins", sans-serif;
+$baseFont2: "Commissioner", sans-serif;
+$baseColor: #865cd5;
+$white: #ffffff;
+$linkColor: #5c5b63;
+$buttonBg: #e9e9e9;
+$cardbg: #e5e5e5;
+$redColor: #fe003e;
+$pinkColor: #7b2a56;
+$yellowColor: #f2c94c;
+$greenColor: #00d395;
+$blueColor: #2ea5e8;
+$black: #000000;
+$buttonError: #111117;
+$positive: #48d5bc;
+$Gradient-1: linear-gradient(
+  90deg,
+  #f37ad1 8.4%,
+  #9882f4 58.19%,
+  #55eed0 107.98%
+);
+$Gradient-2: linear-gradient(135deg, #05e8fc 14.34%, #fe0291 85.36%);
+$Gradient-3: linear-gradient(135deg, #05e8fc 0%, #8883fa 50%, #fe0291 100%);
+$Gradient-4: linear-gradient(
+  90deg,
+  #aadfef -0.55%,
+  #d77cd4 49.73%,
+  #fae18f 100%
+);
+
+/* Light Mode color variables ------ */
+$black: #212030;
+$border: #afafaf;
+$lightbg: #f4f4f4;
+$tooltipbg: #737373;
+$border2: #f0f0f0;
+
+// dual mode color
+
+$themes: (
+  lightTheme: (
+    "baseBg": #ffffff,
+    "darkBg": #000000,
+    "darkBgLite": rgba(255, 255, 255, 0.2),
+    "linkColor": #5c5b63,
+    "textColor": #afafaf,
+    "blueClr": #2ea5e8,
+    "linkActvie": #212030,
+    "linkActive2": #212030,
+    "dotBg": #e9e9e9,
+    "activeBg": #afafaf,
+    "borderClr": #afafaf,
+    "borderClr2": #afafaf,
+    "borderClr3": #e9e9e9,
+    "borderClr4": #f0f0f0,
+    "fieldBg": #ffffff,
+    "titleColor": #212030,
+    "borderColor": #f4f4f4,
+    "modelfield": #f0f0f0,
+    "swapBg": #f0f0f0,
+    "headerBg": transparent,
+    "iconClr": #5c5b63,
+    "iconBg": #f0f0f0,
+    "mono": #212030,
+    "monodark": #f0f0f0,
+    "gradientBg": linear-gradient(94.92deg, #fafafa 0%, #ffffff 100%),
+  ),
+  darkTheme: (
+    "baseBg": #040404,
+    "darkBg": #ffffff,
+    "darkBgLite": rgba(0, 0, 0, 0.2),
+    "linkColor": #737373,
+    "textColor": #737373,
+    "blueClr": #19cfdd,
+    "linkActvie": #ffffff,
+    "linkActive2": #19cfdd,
+    "dotBg": #14131c,
+    "activeBg": #ffffff,
+    "borderClr": #14131c,
+    "borderClr2": #040404,
+    "borderClr3": #111117,
+    "borderClr4": #14131c,
+    "fieldBg": #000000,
+    "titleColor": #fff,
+    "borderColor": #040404,
+    "modelfield": #040404,
+    "swapBg": #111117,
+    "headerBg": #040404,
+    "iconClr": #ffffff,
+    "iconBg": #0c0c0f,
+    "mono": #0c0c0f,
+    "monodark": #ffffff,
+    "gradientBg": linear-gradient(135deg, #111117 0%, #040404 100%),
+  ),
+);
+
+// @include theme() {
+//   color: theme-get("textGreen");
+// }
